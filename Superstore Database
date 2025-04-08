@@ -1,4 +1,4 @@
---This project uses the following superstore data:
+#This project uses the following superstore data:
 
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
@@ -27,23 +27,23 @@ VALUES
     (14, 'Cutlery Set', 'Kitchen Supplies', 34.50, 40, 4.4),
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
---I used SQL to query the superstore database to get information about the  items sold, prices, and quantity.
+#I used SQL to query the superstore database to get information about the  items sold, prices, and quantity.
 
---Use a SELECT statement to order the items by price.
+#Use a SELECT statement to order the items by price.
 SELECT item_name, price
 FROM superstore
 ORDER BY price;
 
---Show a statistic about item prices. 
+#Show a statistic about item prices. 
 SELECT SUM (price)
 FROM superstore;
 
---Show a statistic about the price for items in the category "Kitchen Supplies".
+#Show a statistic about the price for items in the category "Kitchen Supplies".
 SELECT AVG (price)
 FROM superstore
 WHERE category = "Kitchen Supplies";
 
---Show a statistic about the stock quantity of the item "Robot Vacuum Cleaner".
+#Show a statistic about the stock quantity of the item "Robot Vacuum Cleaner".
 SELECT SUM (stock_quantity)
 FROM superstore
 WHERE item_name = "Robot Vacuum Cleaner";
