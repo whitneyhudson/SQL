@@ -35,10 +35,9 @@ LIMIT 10;
 #Then I discovered the average danceability of the top 10 most popular songs.
 SELECT AVG(danceability)
 FROM BIT_DB.Spotifydata
-WHERE popularity = (SELECT popularity FROM BIT_DB.Spotifydata ORDER BY popularity desc LIMIT 10);
+WHERE track_name IN(SELECT track_name FROM BIT_DB.Spotifydata ORDER BY popularity desc LIMIT 10);
 
 #Finally, I found out which artist released the longest song.
---Which artist released the longest song?
 SELECT artist_name, track_name, MAX(duration_ms) AS song_length
 FROM BIT_DB.Spotifydata;
 
