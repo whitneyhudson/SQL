@@ -34,16 +34,19 @@ SELECT item_name, price
 FROM superstore
 ORDER BY price;
 
-#Show a statistic about item prices. 
-SELECT SUM (price)
-FROM superstore;
+#Show the amount spent in each category.
+SELECT SUM(price)
+, category
+FROM superstore
+GROUP BY category;
 
-#Show a statistic about the price for items in the category "Kitchen Supplies".
-SELECT AVG (price)
+#Write a query that shows the most expensive item in the Kitchen Supplies category. 
+SELECT item_name
+, MAX(price)
 FROM superstore
 WHERE category = "Kitchen Supplies";
 
-#Show a statistic about the stock quantity of the item "Robot Vacuum Cleaner".
-SELECT SUM (stock_quantity)
+#Write a query that shows the highest rated item in the electronics category.
+SELECT item_name, MAX(average_rating)
 FROM superstore
-WHERE item_name = "Robot Vacuum Cleaner";
+WHERE category = "Electronics";
